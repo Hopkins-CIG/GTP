@@ -1,0 +1,30 @@
+import argparse
+from scripts.test_reconstruction.test_recon_mr_ct_tv import run_experiment
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description='Run sparse-view MR-to-CT TV inference')
+    parser.add_argument('--device', type=str, default='cuda:0', help='CUDA device to use')
+    parser.add_argument('--data-root', type=str, default=None, help='Root containing the downloaded datasets')
+    parser.add_argument('--output-root', type=str, default=None, help='Root for inference results')
+    parser.add_argument('--limit-batches', type=int, default=None, help='Maximum number of samples per view count')
+    args = parser.parse_args()
+
+    for n_views in (4, 8, 16, 32):
+        run_experiment(
+            task='sv',
+            evaluation_set='test',
+            n_views=n_views,
+            device=args.device,
+            delta=0.001,
+            weight=1.0,
+            num_subsets=30,
+            num_tv=50,
+            data_root=args.data_root,
+            output_root=args.output_root,
+            limit_batches=args.limit_batches,
+        )
+
+
+if __name__ == '__main__':
+    main()
+

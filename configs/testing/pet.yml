@@ -1,0 +1,13 @@
+settings:
+  100000:
+    osem: {num_subsets: 5, num_iter: 1}
+    pet_dds: {use_ct: true, num_steps: 200, alpha: 0.01, lamda: 1, prox_steps: 5}
+    prox_gtp: {use_ct: true, num_steps: 200, alpha: 0.001, lamda: 1.0, prox_steps: 1, proximal: bregman}
+  500000:
+    osem: {num_subsets: 2, num_iter: 5}
+    pet_dds: {use_ct: true, num_steps: 200, alpha: 0.01, lamda: 1, prox_steps: 5}
+    prox_gtp: {use_ct: true, num_steps: 200, alpha: 0.002, lamda: 1.0, prox_steps: 2, proximal: bregman}
+  1000000:
+    osem: {num_subsets: 2, num_iter: 5}
+    pet_dds: {use_ct: true, num_steps: 200, alpha: 0.01, lamda: 1, prox_steps: 5}
+    prox_gtp: {use_ct: true, num_steps: 200, alpha: 0.002, lamda: 1.0, prox_steps: 2, proximal: bregman}

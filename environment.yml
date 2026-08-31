@@ -1,0 +1,32 @@
+name: gtp
+channels:
+  - defaults
+  - conda-forge
+
+dependencies:
+  - python
+  - pip
+  - git
+  - jupyter
+  - notebook
+  - pytest
+  - ipykernel
+  - imageio
+  - matplotlib
+  - cmake
+  - make
+  - cupy
+  - cuda-toolkit
+  - parallelproj=1.10.2
+
+  - pip:
+    - torch
+    - torchvision
+    - lightning
+    - torchmetrics
+    - pyyaml
+    - tqdm
+    - scikit-image
+    - jsonargparse[signatures]
+    - segment-anything-py
+    - -e .

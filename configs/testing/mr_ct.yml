@@ -1,0 +1,108 @@
+common:
+  fbp: {}
+  tv: {weight: 1.0, delta: 0.001, num_subsets: 30, num_tv: 50}
+  daps: {num_steps: 200, langevin_lr: 0.00001, meas_grad_weight: 10000.0, num_langevin_steps: 50}
+  daps_gtp: {num_steps: 200, langevin_lr: 0.00005, meas_grad_weight: 10000.0, num_langevin_steps: 50}
+  dds: {num_steps: 200, n_cg: 5, lamda: 1.0, num_samples: 1}
+  dds_gtp: {num_steps: 200, n_cg: 5, lamda: 1.0, num_samples: 1}
+  dps: {num_steps: 200, lamda: 2.0, num_samples: 1, step_size_scaling: improved}
+  grad_gtp: {num_steps: 1000, lamda: 0.5, num_samples: 1}
+  grad_gtp_unpaired: {num_steps: 1000, lamda: 0.2, num_samples: 1}
+  prox_gtp: {num_steps: 200, n_cg: 5, lamda: 0.1, num_samples: 1}
+  prox_gtp_rigorous: {num_steps: 1000, lamda: 0.005, num_samples: 1}
+  prox_gtp_unpaired: {num_steps: 200, n_cg: 5, lamda: 0.001, num_samples: 1}
+settings:
+  la:
+    30:
+      daps: {langevin_lr: 0.00005, meas_grad_weight: 10000.0}
+      daps_gtp: {langevin_lr: 0.00005, meas_grad_weight: 10000.0}
+      dds: {n_cg: 10, lamda: 1.0}
+      dds_gtp: {n_cg: 10, lamda: 0.1}
+      dps: {lamda: 2.0}
+      grad_gtp: {lamda: 1.0}
+      grad_gtp_unpaired: {lamda: 0.2}
+      prox_gtp: {n_cg: 10, lamda: 10.0}
+      prox_gtp_rigorous: {lamda: 0.02}
+      prox_gtp_unpaired: {n_cg: 10, lamda: 0.001}
+    60:
+      daps: {langevin_lr: 0.00005, meas_grad_weight: 1000.0}
+      dds: {n_cg: 10, lamda: 100.0}
+      dds_gtp: {n_cg: 5, lamda: 10000.0}
+      grad_gtp: {lamda: 5.0}
+      grad_gtp_unpaired: {lamda: 0.1}
+      prox_gtp: {n_cg: 10, lamda: 1.0}
+      prox_gtp_rigorous: {lamda: 0.005}
+      prox_gtp_unpaired: {n_cg: 5, lamda: 100.0}
+    90:
+      daps: {langevin_lr: 0.00005}
+      dps: {lamda: 5.0}
+      dds: {n_cg: 5, lamda: 1.0}
+      dds_gtp: {n_cg: 5, lamda: 0.001}
+      grad_gtp: {lamda: 5.0}
+      grad_gtp_unpaired: {lamda: 5.0}
+      prox_gtp: {n_cg: 5, lamda: 0.1}
+      prox_gtp_rigorous: {lamda: 0.005}
+      prox_gtp_unpaired: {n_cg: 5, lamda: 10000.0}
+    120:
+      daps: {langevin_lr: 0.00005}
+      dps: {lamda: 5.0}
+      dds: {n_cg: 5, lamda: 1000.0}
+      dds_gtp: {n_cg: 10, lamda: 0.0001}
+      grad_gtp: {lamda: 2.0}
+      grad_gtp_unpaired: {lamda: 2.0}
+      prox_gtp: {n_cg: 10, lamda: 0.0001}
+      prox_gtp_rigorous: {lamda: 0.005}
+      prox_gtp_unpaired: {n_cg: 5, lamda: 10000.0}
+  sv:
+    4:
+      daps: {langevin_lr: 0.00001, meas_grad_weight: 10000.0}
+      daps_gtp: {}
+      dds: {n_cg: 5, lamda: 10.0}
+      dds_gtp: {n_cg: 5, lamda: 100.0}
+      dps: {lamda: 5.0}
+      fbp: {}
+      grad_gtp: {}
+      grad_gtp_unpaired: {lamda: 0.1}
+      prox_gtp: {lamda: 1.0}
+      prox_gtp_rigorous: {}
+      prox_gtp_unpaired: {lamda: 0.01}
+      tv: {}
+    8:
+      daps: {langevin_lr: 0.00001}
+      daps_gtp: {}
+      dds: {n_cg: 5, lamda: 1.0}
+      dds_gtp: {lamda: 100.0}
+      dps: {lamda: 5.0}
+      fbp: {}
+      grad_gtp: {}
+      grad_gtp_unpaired: {lamda: 0.2}
+      prox_gtp: {n_cg: 5, lamda: 0.1}
+      prox_gtp_rigorous: {}
+      prox_gtp_unpaired: {n_cg: 5, lamda: 10000.0}
+      tv: {}
+    16:
+      daps: {langevin_lr: 0.00001}
+      daps_gtp: {}
+      dds: {n_cg: 5, lamda: 0.001}
+      dds_gtp: {n_cg: 10, lamda: 0.001}
+      dps: {}
+      fbp: {}
+      grad_gtp: {}
+      grad_gtp_unpaired: {lamda: 2.0}
+      prox_gtp: {n_cg: 10, lamda: 0.001}
+      prox_gtp_rigorous: {lamda: 0.002}
+      prox_gtp_unpaired: {n_cg: 10, lamda: 0.001}
+      tv: {}
+    32:
+      daps: {langevin_lr: 0.00005}
+      daps_gtp: {}
+      dds: {n_cg: 10, lamda: 0.001}
+      dds_gtp: {n_cg: 5, lamda: 0.001}
+      dps: {}
+      fbp: {}
+      grad_gtp: {}
+      grad_gtp_unpaired: {lamda: 5.0}
+      prox_gtp: {n_cg: 5, lamda: 0.001}
+      prox_gtp_rigorous: {lamda: 0.01}
+      prox_gtp_unpaired: {n_cg: 5, lamda: 0.001}
+      tv: {}
