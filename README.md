@@ -1,7 +1,7 @@
 # Generative Translation Priors (GTP)
 
 This repository contains code to reproduce the main results of [Generative Translation Priors: Bayesian Imaging with
-Cross-Modality Image Translation](arxiv.org).
+Cross-Modality Image Translation](https://arxiv.org/abs/2608.28872).
 
 ![GTP](scheme.png)
 
@@ -73,3 +73,7 @@ and [configs/testing/pet.yml](configs/testing/pet.yml). Results are output to th
 `results/ct_recon/` and `results/pet_recon/` directories by default.
 
 After running experiments, the scripts `scripts/run_testing/mr_ct/get_tables.py` and `scripts/run_testing/ct_pet/get_tables.py` can be used to print tables with quantitative results.
+
+## Acknowledgments
+
+Parts of this repository are built on top of code from [DDBM](https://github.com/alexzhou907/DDBM/) and examples from [`parallelproj`](https://parallelproj.readthedocs.io/en/stable/).
